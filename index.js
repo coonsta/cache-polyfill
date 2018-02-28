@@ -16,6 +16,9 @@
  */
 
 (function() {
+  // if there is no native Cache, nothing we can do.
+  if(!Cache){return;}
+
   var nativeAddAll = Cache.prototype.addAll;
   var userAgent = navigator.userAgent.match(/(Firefox|Chrome)\/(\d+\.)/);
 
