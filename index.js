@@ -16,6 +16,11 @@
  */
 
 (function() {
+  // if there is no `Cache` on `window` or other global object, like `process`
+  // then we can do nothing, just returns.
+  // fixed #25: https://github.com/dominiccooney/cache-polyfill/issues/25
+  if (!window.Cache) return;
+
   var nativeAddAll = Cache.prototype.addAll;
   var userAgent = navigator.userAgent.match(/(Firefox|Chrome)\/(\d+\.)/);
 
